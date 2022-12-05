@@ -8,10 +8,11 @@ function App(): JSX.Element {
     fetch('https://www.cbr-xml-daily.ru/latest.js')
       .then((response) => response.json())
       .then((rates) => {
+        rates.rates["RUB"] = 1;
         ratesRef.current = rates.rates;
       })
   }, []);
-
+  
   return (
     <div className="App">
       {/* <Block value={0} currency="RUB" onChangeCurrency={} />
