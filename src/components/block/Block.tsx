@@ -1,16 +1,18 @@
+import {Dispatch, SetStateAction} from 'react';
+
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'KZT'];
 
 type BlockComponentType = {
   value: number,
   currency: string,
-  onChangeValue: void,
-  onChangeCurrency: void,
+  onChangeValue: () => void,
+  onChangeCurrency: Dispatch<SetStateAction<string>>,
 }
 
 function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockComponentType): JSX.Element {
   return (
     <div className="block">
-      {/* <ul className="currencies">
+      <ul className="currencies">
         {defaultCurrencies.map((cur) => (
           <li
             onClick={() => onChangeCurrency(cur)}
@@ -27,11 +29,11 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockCompon
         </li>
       </ul>
       <input
-        onChange={(e) => onChangeValue(e.target.value)}
+        // onChange={(e) => onChangeValue(e.target.value)}
         value={value}
         type="number"
-        placeholder={0}
-      /> */}
+        // placeholder={0}
+      />
     </div>
   );
 }; 
