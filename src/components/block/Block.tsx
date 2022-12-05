@@ -29,14 +29,14 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockCompon
           </svg>
         </li>
       </ul>
-      
+
       <input
         onChange={(evt: ChangeEvent<HTMLInputElement>) => {
           onChangeValue(Number(evt.target.value))
         }}
         value={value}
         type="number"
-        placeholder="0"
+        placeholder="1"
       />
     </div>
   );
