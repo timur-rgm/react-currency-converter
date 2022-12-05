@@ -3,8 +3,10 @@ import Block from '../block/Block';
 
 function App(): JSX.Element {
   const ratesRef = useRef({});
-  const [fromCurrency, setFromCurrency] = useState("USD");
-  const [toCurrency, setToCurrency] = useState("RUB");
+  const [fromCurrency, setFromCurrency] = useState<string>("USD");
+  const [toCurrency, setToCurrency] = useState<string>("RUB");
+  const [fromPrice, setFromPrice] = useState<number>(0);
+  const [toPrice, setToPrice] = useState<number>(0);
 
   useEffect(() => {
     fetch('https://www.cbr-xml-daily.ru/latest.js')
@@ -15,18 +17,26 @@ function App(): JSX.Element {
       })
   }, []);
 
+  const onFromPriceChange = (value: number) => {
+    setFromPrice(value);
+  };
+  
+  const onToPriceChange = (value: number) => {
+    setToPrice(value);
+  };
+
   return (
     <div className="App">
       <Block
-        value={0}
+        value={fromPrice}
         currency={fromCurrency}
-        onChangeValue={() => console.log()}
+        onChangeValue={onFromPriceChange}
         onChangeCurrency={setFromCurrency}
       />
       <Block
-        value={0}
+        value={toPrice}
         currency={toCurrency}
-        onChangeValue={() => console.log()}
+        onChangeValue={onToPriceChange}
         onChangeCurrency={setToCurrency}
       />
     </div>

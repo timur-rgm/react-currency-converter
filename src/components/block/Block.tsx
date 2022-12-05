@@ -1,11 +1,11 @@
-import {Dispatch, SetStateAction} from 'react';
+import {ChangeEvent, Dispatch, SetStateAction} from 'react';
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'KZT'];
 
 type BlockComponentType = {
   value: number,
   currency: string,
-  onChangeValue: () => void,
+  onChangeValue: (value: number) => void,
   onChangeCurrency: Dispatch<SetStateAction<string>>,
 }
 
@@ -29,7 +29,9 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockCompon
         </li>
       </ul>
       <input
-        // onChange={(e) => onChangeValue(e.target.value)}
+        onChange={(evt: ChangeEvent<HTMLInputElement>) => {
+          onChangeValue(Number(evt.target.value))
+        }}
         value={value}
         type="number"
         // placeholder={0}
