@@ -17,6 +17,7 @@ function App(): JSX.Element {
       .then((rates) => {
         rates.rates["RUB"] = 1;
         ratesRef.current = rates.rates;
+        onFromPriceChange(1);
       })
   }, []);
 
