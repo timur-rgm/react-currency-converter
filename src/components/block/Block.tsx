@@ -1,9 +1,16 @@
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'KZT'];
 
-function Block({ value, currency, onChangeValue, onChangeCurrency }): JSX.Element {
+type BlockComponentType = {
+  value: number,
+  currency: string,
+  onChangeValue: void,
+  onChangeCurrency: void,
+}
+
+function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockComponentType): JSX.Element {
   return (
     <div className="block">
-      <ul className="currencies">
+      {/* <ul className="currencies">
         {defaultCurrencies.map((cur) => (
           <li
             onClick={() => onChangeCurrency(cur)}
@@ -24,7 +31,7 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }): JSX.Elemen
         value={value}
         type="number"
         placeholder={0}
-      />
+      /> */}
     </div>
   );
 }; 
