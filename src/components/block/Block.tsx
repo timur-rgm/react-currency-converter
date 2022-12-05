@@ -21,6 +21,7 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockCompon
             {cur}
           </li>
         ))}
+
         <li>
           <svg height="50px" viewBox="0 0 50 50" width="50px">
             <rect fill="none" height="50" width="50" />
@@ -28,13 +29,14 @@ function Block({ value, currency, onChangeValue, onChangeCurrency }: BlockCompon
           </svg>
         </li>
       </ul>
+      
       <input
         onChange={(evt: ChangeEvent<HTMLInputElement>) => {
           onChangeValue(Number(evt.target.value))
         }}
         value={value}
         type="number"
-        // placeholder={0}
+        placeholder="0"
       />
     </div>
   );
