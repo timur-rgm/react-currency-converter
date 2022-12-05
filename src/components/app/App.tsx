@@ -32,6 +32,14 @@ function App(): JSX.Element {
     setFromPrice(result);
   };
 
+  useEffect(() => {
+    onFromPriceChange(fromPrice);
+  }, [toCurrency]);
+  
+  useEffect(() => {
+    onToPriceChange(toPrice);
+  }, [fromCurrency]);
+
   return (
     <div className="App">
       <Block
