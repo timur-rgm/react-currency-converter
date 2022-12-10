@@ -2,7 +2,7 @@
 
 Конвертер валют по курсу, получаемому из API ЦБ.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5337091a-fa43-4041-9c74-c5fb2e783fbb/deploy-status)](https://spa-six-cities.netlify.app/)
+Демонстрация - [![Netlify Status](https://api.netlify.com/api/v1/badges/122b1cae-bf3a-42e5-9e65-c4ec25637a01/deploy-status)](https://app.netlify.com/sites/timur-react-currency-converter/deploys)
 
 ## Стек технологий
 
